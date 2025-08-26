@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boyfriend Tears - Mentor Morris Njogu</title>
+  <style>
+    /* FONT SETUP */
+    @font-face {
+      font-family: 'FuturaLT';
+      src: url('/fonts/futura-lt/FuturaLT.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'FuturaLT-Bold';
+      src: url('/fonts/futura-lt/FuturaLT-Bold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'FuturaLT-Book';
+      src: url('/fonts/futura-lt/FuturaLT-Book.ttf') format('truetype');
+    }
+
+    /* Dark mode variables (default off) */
+    :root {
+      --bg: #fff;
+      --bg-alt: #f9f9f9;
+      --text: #111;
+      --text-muted: #444;
+      --accent: #d23669;
+      --border: #ddd;
+    }
+
+    body.dark {
+      --bg: #000;
+      --bg-alt: #111;
+      --text: #fff;
+      --text-muted: #ccc;
+      --accent: #e50914;
+      --border: #444;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'FuturaLT', sans-serif;
+      background: linear-gradient(to bottom, var(--bg), var(--bg-alt));
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--bg-alt);
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-family: 'FuturaLT-Bold', sans-serif;
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--accent);
+      transition: transform 0.3s;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.2);
+    }
+
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    nav a {
+      color: var(--accent);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'FuturaLT-Book', sans-serif;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      margin: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      flex: 1 1 280px;
+    }
+
+    .hero-text {
+      flex: 2 1 400px;
+      margin: 1rem;
+      max-width: 600px;
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+      font-family: 'FuturaLT-Bold', sans-serif;
+      color: var(--accent);
+    }
+
+    .hero-text p {
+      margin-top: 1rem;
+      color: var(--text-muted);
+      font-family: 'FuturaLT-Book', sans-serif;
+    }
+
+    section {
+      padding: 2rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      font-family: 'FuturaLT-Bold', sans-serif;
+    }
+
+    .book-info p {
+      margin: 0.5rem 0;
+      color: var(--text-muted);
+    }
+
+    footer {
+      background: var(--bg-alt);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      border-top: 2px solid var(--border);
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+      color: var(--text-muted);
+      font-family: 'FuturaLT-Book', sans-serif;
+    }
+
+    /* WhatsApp Button Styles */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: #fff;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-decoration: none;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      z-index: 1000;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+      background-color: #20b355;
+    }
+
+    .whatsapp-button img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body class="light">
+
+  <header>
+    <h1>Boyfriend Tears</h1>
+    <p>By Mentor Morris Njogu</p>
+    <button class="theme-toggle" id="themeToggle">☀️</button>
+  </header>
+
+  <nav>
+    <a href="#description">Description</a>
+    <a href="#info">Book Info</a>
+  </nav>
+
+  <section class="hero">
+    <img src="images/cover.jpeg" alt="Boyfriend Tears Cover">
+    <div class="hero-text">
+      <h2>“Restoring the Hearts that loved  too much”</h2>
+      <p>— Book Synopsis</p>
+    </div>
+  </section>
+
+  <section id="description">
+    <h2>Description</h2>
+    <p>
+      <em>Boyfriend Tears</em> speaks to the silent heartbreak many young women carry, especially 
+      who thought they were doing everything right. It’s about the quiet pain that doesn’t always show 
+      but runs deep — the kind that comes from giving your heart to someone who wasn’t ready or meant to hold it.
+    </p>
+    <p>
+      This book walks with you through that pain, offering honesty, healing, and hope. It helps you understand 
+      your patterns, your wounds, and your worth — not just as a woman, but as a daughter of God.
+    </p>
+    <p>
+      Through real talk, truth, and compassion, <em>Boyfriend Tears</em> becomes a safe space to process, 
+      heal, and grow. If you’ve ever cried quietly after loving too hard, this book is for you. Your tears 
+      weren’t wasted — they are where healing begins.
+    </p>
+  </section>
+
+  <section id="info" class="book-info">
+    <h2>Book Information</h2>
+    <p><strong>Author:</strong> Mentor Morris Njogu</p>
+    <p><strong>Publisher:</strong> Berkley</p>
+    <p><strong>Publication Date:</strong> May 7, 2024</p>
+    <p><strong>ISBN:</strong> 9780593336702</p>
+    <p><strong>Pages:</strong> 336</p>
+    <p><strong>Category:</strong> Romance, Contemporary</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Boyfriend Tears - Book Page</p>
+    <p>Synopsis provided by the publisher</p>
+  </footer>
+<a href="#" id="whatsappLink" class="whatsapp-button" target="_blank" rel="noopener">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+
+
+  <script>
+    function setWhatsAppLink() {
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const whatsappLink = document.getElementById('whatsappLink');
+      const phoneNumber = '+254792874513';
+      const message = encodeURIComponent("Hi, I'd like to order 'Boyfriend Tears' by Mentor Morris Njogu");
+      
+      if (isMobile) {
+        whatsappLink.href = `https://wa.me/${phoneNumber}?text=${message}`;
+      } else {
+        whatsappLink.href = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+      }
+    }
+
+    // Set the link when the page loads
+    setWhatsAppLink();
+  </script>
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    function setTheme(isDark) {
+      body.classList.toggle('dark', isDark);
+      toggleBtn.textContent = isDark ? '🌙' : '☀️';
+    }
+
+    // Default: light mode
+    setTheme(false);
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = !body.classList.contains('dark');
+      setTheme(isDark);
+    });
+  </script>
+
+</body>
+</html>
