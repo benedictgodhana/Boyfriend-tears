@@ -8,15 +8,15 @@
     /* FONT SETUP */
     @font-face {
       font-family: 'FuturaLT';
-      src: url('/fonts/futura-lt/FuturaLT.ttf') format('truetype');
+      src: url('fonts/futura-lt/FuturaLT.ttf') format('truetype');
     }
     @font-face {
       font-family: 'FuturaLT-Bold';
-      src: url('/fonts/futura-lt/FuturaLT-Bold.ttf') format('truetype');
+      src: url('fonts/futura-lt/FuturaLT-Bold.ttf') format('truetype');
     }
     @font-face {
       font-family: 'FuturaLT-Book';
-      src: url('/fonts/futura-lt/FuturaLT-Book.ttf') format('truetype');
+      src: url('fonts/futura-lt/FuturaLT-Book.ttf') format('truetype');
     }
 
     /* Dark mode variables (default off) */
@@ -40,7 +40,7 @@
 
     body {
       margin: 0;
-      font-family: 'FuturaLT', sans-serif;
+      font-family: 'FuturaLT', Arial, sans-serif;
       background: linear-gradient(to bottom, var(--bg), var(--bg-alt));
       color: var(--text);
       line-height: 1.6;
@@ -58,7 +58,7 @@
     header h1 {
       margin: 0;
       font-size: 2.5rem;
-      font-family: 'FuturaLT-Bold', sans-serif;
+      font-family: 'FuturaLT-Bold', Arial, sans-serif;
       color: var(--accent);
     }
 
@@ -94,7 +94,7 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-      font-family: 'FuturaLT-Book', sans-serif;
+      font-family: 'FuturaLT-Book', Arial, sans-serif;
     }
 
     nav a:hover {
@@ -127,14 +127,14 @@
 
     .hero-text h2 {
       font-size: 2rem;
-      font-family: 'FuturaLT-Bold', sans-serif;
+      font-family: 'FuturaLT-Bold', Arial, sans-serif;
       color: var(--accent);
     }
 
     .hero-text p {
       margin-top: 1rem;
       color: var(--text-muted);
-      font-family: 'FuturaLT-Book', sans-serif;
+      font-family: 'FuturaLT-Book', Arial, sans-serif;
     }
 
     section {
@@ -147,7 +147,7 @@
       color: var(--accent);
       margin-bottom: 1rem;
       font-size: 1.8rem;
-      font-family: 'FuturaLT-Bold', sans-serif;
+      font-family: 'FuturaLT-Bold', Arial, sans-serif;
     }
 
     .book-info p {
@@ -166,7 +166,7 @@
     footer p {
       margin: 0.5rem 0;
       color: var(--text-muted);
-      font-family: 'FuturaLT-Book', sans-serif;
+      font-family: 'FuturaLT-Book', Arial, sans-serif;
     }
 
     /* WhatsApp Button Styles */
@@ -217,7 +217,7 @@
   <section class="hero">
     <img src="images/cover.jpeg" alt="Boyfriend Tears Cover">
     <div class="hero-text">
-      <h2>“Restoring the Hearts that loved  too much”</h2>
+      <h2>“Restoring the Hearts that loved too much”</h2>
       <p>— Book Synopsis</p>
     </div>
   </section>
@@ -254,11 +254,10 @@
     <p>&copy; 2024 Boyfriend Tears - Book Page</p>
     <p>Synopsis provided by the publisher</p>
   </footer>
-<a href="#" id="whatsappLink" class="whatsapp-button" target="_blank" rel="noopener">
+
+  <a href="#" id="whatsappLink" class="whatsapp-button" target="_blank" rel="noopener">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
-
-
 
   <script>
     function setWhatsAppLink() {
@@ -277,6 +276,7 @@
     // Set the link when the page loads
     setWhatsAppLink();
   </script>
+
   <script>
     const toggleBtn = document.getElementById('themeToggle');
     const body = document.body;
@@ -294,6 +294,5 @@
       setTheme(isDark);
     });
   </script>
-
 </body>
 </html>
